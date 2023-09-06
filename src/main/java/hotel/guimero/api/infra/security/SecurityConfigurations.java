@@ -28,13 +28,13 @@ public class SecurityConfigurations {
         return httpSecurity
                 .csrf(config -> config.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                //Luego de desactivar el statefull y habilitar el stateless pasa a permitir los post/login y el swagger.
+                //Luego de desactivar el statefull y habilitar el stateless pasa a permitir los post/username y el swagger.
                 //Y hace que los otros requests pasen por el filtro.
 
                 .authorizeHttpRequests(auth -> {
+                    auth.requestMatchers(HttpMethod.POST, "/users/register").permitAll();
                     auth.requestMatchers(HttpMethod.POST, "/login").permitAll();
                     auth.requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll();
-                    //TODO: agregar permitAll para el registro de usuarios.
                     auth.anyRequest().authenticated();
                 })
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="244d37a7-a0a3-4b46-a6d4-ac967f2f5863" name="Changes" comment="" />
+    <list default="true" id="244d37a7-a0a3-4b46-a6d4-ac967f2f5863" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserShowData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserAuthenticationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserAuthenticationData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/errors/ErrorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/errors/ErrorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityConfigurations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/SecurityConfigurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/SecurityConfigurations.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,11 +34,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -33,6 +54,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2UkVr93ruMyGxwwYaR0wibvGCbq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -41,7 +65,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Guille/Desktop/LetsCode/JavaGlobant/clase 81 a 90 (Herencia)/Ej01Extra",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/Guille/Desktop/LetsCode/Showing off/hotel.guimero.api",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
@@ -60,19 +85,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="hotel.guimero.api" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="hotel.guimero.api" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

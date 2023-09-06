@@ -15,13 +15,21 @@ import java.util.List;
 @Getter
 @EqualsAndHashCode(of = "id")
 public class User implements UserDetails {
-    //UserDetails indica que aquí es la tabla de login.
+    //UserDetails indica que aquí es la tabla de loginc.
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String login;
+    private String username;
     private String password;
+
+    public User(UserAuthenticationData userData){
+        this.username = userData.username();
+        this.password = userData.password();
+    }
+
+    public User() {
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -35,7 +43,7 @@ public class User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return login;
+        return username;
     }
 
     @Override

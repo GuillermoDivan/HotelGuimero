@@ -4,4 +4,5 @@ public record UserShowData(String username) {
     public UserShowData(User user) {
         this(user.getUsername());
     }
+
 }

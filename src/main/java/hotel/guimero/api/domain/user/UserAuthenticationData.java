@@ -1,7 +1,7 @@
 package hotel.guimero.api.domain.user;
 
-public record UserAuthenticationData(String username, String password) {
+public record UserAuthenticationData(String username, String password,String email, Role role) {
     public UserAuthenticationData(User user){
-        this(user.getUsername(), user.getPassword());
+        this(user.getUsername(), user.getPassword(),user.getEmail(),user.getRole());
     }
 }

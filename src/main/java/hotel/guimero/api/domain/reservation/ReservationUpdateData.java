@@ -3,5 +3,5 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 public record ReservationUpdateData(@NotNull Long id, LocalDateTime checkInDate,
-                                    LocalDateTime checkOutDate, String paymentMode, String price){
+                                    LocalDateTime checkOutDate, PaymentMode paymentMode, String price){
 }

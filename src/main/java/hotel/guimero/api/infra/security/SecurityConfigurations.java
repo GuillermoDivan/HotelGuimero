@@ -1,25 +1,42 @@
 package hotel.guimero.api.infra.security;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import hotel.guimero.api.services.user.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.security.web.authentication.logout.LogoutHandler;
+
+import java.util.List;
 
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfigurations {
 
-    @Autowired
-    private SecurityFilter securityFilter;
+    private final SecurityFilter securityFilter;
+    private final UserDetailsServiceImpl userDetailsService;
+    private final LogoutHandler logoutHandler;
+
+    public SecurityConfigurations(SecurityFilter securityFilter,
+                                  UserDetailsServiceImpl userDetailsService, LogoutHandler logoutHandler) {
+        this.securityFilter = securityFilter;
+        this.userDetailsService = userDetailsService;
+        this.logoutHandler = logoutHandler;
+    }
 
     @Bean
         //@Bean funciona como autowired para esta porción de código.
@@ -38,18 +55,28 @@ public class SecurityConfigurations {
                     auth.anyRequest().authenticated();
                 })
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+
+                //Logout is deprecated without lambda!!
+                .logout((logout) -> logout.logoutUrl("/logout").addLogoutHandler(logoutHandler)
+                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext()))
+
+                .userDetailsService(userDetailsService)
                 .build();
     }
 
-
     @Bean
-    public AuthenticationManager authenticationManager
-            (AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
+    public AuthenticationManager authenticationManager() {
+        //Proveedor que configura qué tipo de service y de codificador se usan.
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userDetailsService);
+        authProvider.setPasswordEncoder(passwordEncoder());
+        List<AuthenticationProvider> providers =  List.of(authProvider);
+        //El constructor requiere enviar lista.
+       return new ProviderManager(providers);
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 

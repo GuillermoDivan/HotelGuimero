@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 public record ReservationRegisterData(
         @NotNull @Future LocalDateTime checkInDate,
         @NotNull @Future LocalDateTime checkOutDate,
-        @NotBlank String paymentMode) {
+        @NotBlank PaymentMode paymentMode) {
 }
 

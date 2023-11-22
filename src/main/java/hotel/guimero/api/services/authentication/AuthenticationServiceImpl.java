@@ -22,16 +22,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationManager authenticationManager;
     private final TokenService tokenService;
     private final UserRepository userRepository;
-    private final AuthenticationService authenticationService;
 
     public JWTTokenData authenticate(UserAuthenticationData userAuthenticationData) {
-        Authentication authToken = new UsernamePasswordAuthenticationToken(userAuthenticationData.username(),
-                userAuthenticationData.password());
+        Authentication authToken = new UsernamePasswordAuthenticationToken(userAuthenticationData.getUsername(),
+                userAuthenticationData.getPassword());
         var authenticatedUser = authenticationManager.authenticate(authToken);
         var JWTToken = tokenService.generateToken((User) authenticatedUser.getPrincipal());
-        var user = userRepository.findByUsername(userAuthenticationData.username());
-        authenticationService.revokeAllUserTokens(user);
-        authenticationService.savedUserToken(user, JWTToken);
+        var user = userRepository.findByUsername(userAuthenticationData.getUsername()).get();
+        revokeAllUserTokens(user);
+        savedUserToken(user, JWTToken);
         return new JWTTokenData(JWTToken);
     }
 

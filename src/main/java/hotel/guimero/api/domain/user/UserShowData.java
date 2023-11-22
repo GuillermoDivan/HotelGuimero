@@ -1,8 +1,15 @@
 package hotel.guimero.api.domain.user;
 
-public record UserShowData(String username) {
-    public UserShowData(User user) {
-        this(user.getUsername());
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserShowData{
+    String username;
     }
 
-}
+

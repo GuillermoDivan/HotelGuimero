@@ -1,5 +1,6 @@
 package hotel.guimero.api.services.user;
 import hotel.guimero.api.domain.user.*;
+import hotel.guimero.api.infra.mappers.UserMapper;
 import hotel.guimero.api.repositories.UserRepository;
 import hotel.guimero.api.services.authentication.AuthenticationService;
 import hotel.guimero.api.services.user.UserService;
@@ -17,32 +18,33 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationService authenticationService;
+    private final UserMapper userMapper;
 
     @Override
     public UserShowData registerUser(UserAuthenticationData userData) {
-        var user = new User(userData);
+        var user = userMapper.convertRegisterDataToUser(userData);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
-        return new UserShowData(user);
+        return userMapper.convertUserToShow(user);
     }
 
     @Override
     public UserShowData findByUsername(String username) throws EntityNotFoundException{
-        var user = userRepository.findByUsername(username);
-                //.orElseThrow(EntityNotFoundException::new);
-        return new UserShowData(user);
+        var user = userRepository.findByUsername(username)
+                .orElseThrow(EntityNotFoundException::new);
+        return userMapper.convertUserToShow(user);
     }
 
     @Override
     public Page<UserShowData> findAll(boolean active, Pageable paging) {
-        return this.userRepository.findAllByActive(active, paging).map(UserShowData::new);
+        return this.userRepository.findAllByActive(active, paging).map(userMapper::convertUserToShow);
     }
 
     @Override
     public UserShowData findById(Long id) throws EntityNotFoundException {
         User user = this.userRepository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
-        return new UserShowData(user);
+        return userMapper.convertUserToShow(user);
     }
 
     @Override
@@ -60,7 +62,7 @@ public class UserServiceImpl implements UserService {
             this.userRepository.save(user);
             authenticationService.revokeAllUserTokens(user);
         }
-        return new UserShowData(user);
+        return userMapper.convertUserToShow(user);
     }
 
     @Override

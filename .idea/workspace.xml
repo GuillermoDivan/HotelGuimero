@@ -5,89 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="244d37a7-a0a3-4b46-a6d4-ac967f2f5863" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/PaymentMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/room/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/token/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/token/TokenType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserUpdateData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/repositories/TokenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/repositories/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/authentication/AuthenticationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/authentication/AuthenticationServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/authentication/LogoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/PaymentMode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/token/Token$TokenBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/token/Token.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/token/TokenType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/UserUpdateData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/errors/ErrorManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/repositories/ReservationRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/repositories/TokenRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/repositories/UserRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/authentication/AuthenticationService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/authentication/AuthenticationServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/authentication/LogoutService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/guest/GuestService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/reservation/ReservationService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/reservation/ReservationServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserDetailsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/mappers/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/mappers/ReservationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/mappers/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/GuestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/GuestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/guest/GuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/repositories/GuestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationRegisterData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationRegisterData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/repositories/ReservationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationShowData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationShowData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationUpdateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/reservation/ReservationUpdateData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserAuthenticationData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserAuthenticationData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserShowData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/domain/user/UserShowData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/errors/ErrorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/errors/ErrorManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/AuthenticationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityConfigurations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/infra/security/SecurityFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/GuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/guest/GuestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/GuestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/guest/GuestServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/reservation/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/ReservationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/reservation/ReservationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/GuestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/GuestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/ReservationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/ReservationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/guest/GuestRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/repositories/GuestRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationRegisterData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationRegisterData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationShowData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationShowData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationUpdateData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/reservation/ReservationUpdateData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/authentication/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/authentication/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/UserAuthenticationData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/UserAuthenticationData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/domain/user/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/AuthenticationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/SecurityConfigurations.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/SecurityConfigurations.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/SecurityFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/infra/security/SecurityFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/GuestService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/GuestServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/guest/GuestServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/ReservationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/ReservationServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/authentication/AuthenticationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/authentication/AuthenticationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hotel/guimero/api/services/user/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,5 +104,16 @@
       <updated>1693483762551</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/hotel/guimero/api/services/user/UserServiceImpl.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

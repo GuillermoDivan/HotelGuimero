@@ -1,7 +1,12 @@
 package hotel.guimero.api.domain.user;
 
-public record UserAuthenticationData(String username, String password,String email, Role role) {
-    public UserAuthenticationData(User user){
-        this(user.getUsername(), user.getPassword(),user.getEmail(),user.getRole());
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserAuthenticationData{
+    String username; String password; String email; Role role;
     }
-}

@@ -16,7 +16,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-        var user = this.userRepository.findByUsername(username);
+        var user = this.userRepository.findByUsername(username).get();
         return user;
     } //Si hubiera relación de user a roles OneToMany, se trabajaría manualmente aquí.
 }

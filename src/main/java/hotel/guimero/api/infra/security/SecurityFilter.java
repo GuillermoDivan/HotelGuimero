@@ -36,7 +36,7 @@ public class SecurityFilter extends OncePerRequestFilter {
                 var isTokenValid = tokenRepository.findByToken(token)
                         .map(t -> !t.isExpired() && !t.isRevoked()).orElse(false);
                 if (isTokenValid) {
-                    var user = userRepository.findByUsername(subject);
+                    var user = userRepository.findByUsername(subject).get();
                     var authentication = new UsernamePasswordAuthenticationToken
                             (user, null, user.getAuthorities()); //En caso de devolver contraseña va en "credentials".
                     SecurityContextHolder.getContext().setAuthentication(authentication);

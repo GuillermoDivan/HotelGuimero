@@ -3,6 +3,7 @@ import hotel.guimero.api.domain.token.Token;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,7 +13,8 @@ import java.util.List;
 @Entity(name = "User")
 @Table(name = "users")
 @Data
-@EqualsAndHashCode(of = "id")
+//@EqualsAndHashCode(of = "id")
+@NoArgsConstructor
 public class User implements UserDetails {
     //UserDetails indica que aquí es la tabla de login.
 
@@ -24,11 +26,11 @@ public class User implements UserDetails {
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
-    private boolean active;
+    private boolean active = true;
     @OneToMany (mappedBy = "user")
     private List<Token> tokens;
 
-    public User(UserAuthenticationData userData){
+    /*public User(UserAuthenticationData userData){
         this.username = userData.username();
         this.password = userData.password();
         this.email = userData.email();
@@ -36,14 +38,12 @@ public class User implements UserDetails {
         this.active = true;
     }
 
-    public User(UserUpdateData userData){ //No olvidar hacer constructor para update.
-        this.id = userData.id(); // Para Update es necesario el id...
+    public User(UserUpdateData userData){
+        this.id = userData.id();
         this.password = userData.password();
         this.email = userData.email();
     }
-
-    public User() {
-    }
+*/
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

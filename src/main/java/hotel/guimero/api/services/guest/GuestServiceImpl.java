@@ -1,5 +1,6 @@
 package hotel.guimero.api.services.guest;
 import hotel.guimero.api.domain.guest.*;
+import hotel.guimero.api.infra.mappers.GuestMapper;
 import hotel.guimero.api.repositories.GuestRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -11,31 +12,32 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class GuestServiceImpl implements GuestService {
     private final GuestRepository guestRepository;
+    private final GuestMapper guestMapper;
 
     @Override
     public GuestShowData save(GuestRegisterData guestRegisterData) {
-        Guest guest = new Guest(guestRegisterData);
+        var guest =  guestMapper.convertRegisterDataToGuest(guestRegisterData);
         this.guestRepository.save(guest);
-        return new GuestShowData(guest);
+        return guestMapper.convertGuestToShow(guest);
     }
 
     @Override
     public Page<GuestShowData> findAll(boolean active, Pageable paging) {
-        return this.guestRepository.findAllByActive(active, paging).map(GuestShowData::new);
+        return this.guestRepository.findAllByActive(active, paging).map(guestMapper::convertGuestToShow);
     }
 
     @Override
     public GuestShowData findById(Long id) throws EntityNotFoundException{
         Guest guest = this.guestRepository.findByIdAndActive(id, true)
                 .orElseThrow(EntityNotFoundException::new);
-        return new GuestShowData(guest);
+        return guestMapper.convertGuestToShow(guest);
     }
 
     @Override
     public GuestShowData findByName(String name, String surname) throws EntityNotFoundException{
         Guest guest = this.guestRepository.findByNameAndSurnameAndActive(name, surname,true)
                 .orElseThrow(EntityNotFoundException::new);
-        return new GuestShowData(guest);
+        return guestMapper.convertGuestToShow(guest);
     }
 
     @Override
@@ -60,7 +62,7 @@ public class GuestServiceImpl implements GuestService {
             guest.setBirthdate(guestUpdateData.birthdate());
         }
         this.guestRepository.save(guest);}
-        return new GuestShowData(guest);
+        return guestMapper.convertGuestToShow(guest);
     }
 
     @Override

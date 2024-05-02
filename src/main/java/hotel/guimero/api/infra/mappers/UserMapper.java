@@ -1,5 +1,4 @@
 package hotel.guimero.api.infra.mappers;
-import hotel.guimero.api.domain.user.UserAuthenticationData;
 import hotel.guimero.api.domain.user.*;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;

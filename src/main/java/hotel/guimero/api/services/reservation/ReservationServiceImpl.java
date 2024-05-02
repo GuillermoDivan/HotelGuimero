@@ -1,5 +1,6 @@
 package hotel.guimero.api.services.reservation;
 import hotel.guimero.api.domain.reservation.*;
+import hotel.guimero.api.infra.mappers.ReservationMapper;
 import hotel.guimero.api.repositories.ReservationRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -13,31 +14,32 @@ import java.time.temporal.ChronoUnit;
 @RequiredArgsConstructor
 public class ReservationServiceImpl implements ReservationService {
     private final ReservationRepository reservationRepository;
+    private final ReservationMapper reservationMapper;
 
     @Override
     public ReservationShowData save(ReservationRegisterData reservationRegisterData) {
-        Reservation reservation = new Reservation(reservationRegisterData);
+        var reservation = reservationMapper.convertRegisterDataToReservation(reservationRegisterData);
         int duration = calculateDuration(reservation.getCheckInDate(), reservation.getCheckOutDate());
         reservation.setPrice(duration * 70);
         this.reservationRepository.save(reservation);
-        return new ReservationShowData(reservation);
+        return reservationMapper.convertReservationToShow(reservation);
     }
 
     @Override
     public Page<ReservationShowData> findAll(boolean active, Pageable paging) {
-        return this.reservationRepository.findAllByActive(active, paging).map(ReservationShowData::new);
+        return this.reservationRepository.findAllByActive(active, paging).map(reservationMapper::convertReservationToShow);
     }
 
     @Override
     public ReservationShowData findById(Long id)  throws EntityNotFoundException{
        Reservation reservation = this.reservationRepository.findByIdAndActive(id, true)
                 .orElseThrow(EntityNotFoundException::new);
-        return new ReservationShowData(reservation);
+        return reservationMapper.convertReservationToShow(reservation);
     }
 
     @Override
     public Page<ReservationShowData> findAllOnDate(LocalDateTime date, Pageable pageable) {
-        return this.reservationRepository.findAllOnDate(date, pageable).map(ReservationShowData::new);
+        return this.reservationRepository.findAllOnDate(date, pageable).map(reservationMapper::convertReservationToShow);
     }
 
     @Override
@@ -59,7 +61,7 @@ public class ReservationServiceImpl implements ReservationService {
                     reservation.getCheckOutDate());
             reservation.setPrice(duration * 70);
             this.reservationRepository.save(reservation);}
-        return new ReservationShowData(reservation);
+        return reservationMapper.convertReservationToShow(reservation);
     }
 
     @Override
